@@ -1,0 +1,340 @@
+	* {
+		margin: 0;
+		padding: 0;
+		color:#4D5656;
+	}
+	a {
+		-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+		-webkit-user-select: none;
+		-moz-user-focus: none;
+		-moz-user-select: none;
+		text-decoration: none;
+	}
+	ul li {
+		list-style: none;
+	}
+	nav a{
+		margin-left:32px;
+	}
+	nav a.active{
+		color: #71b3dd;
+	}
+	body {
+		background-color: #ecf0f3;
+	}
+
+	@media (min-width: 601px) {
+		body {
+			background-image: url('../img/background.jpg');
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+		}
+	}
+	.container {
+		width: 300px;
+		height: 500px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		z-index:1;
+		-webkit-transform: translate(-50%, -50%);
+		-moz-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		-o-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+	}
+	.hander {
+		width: 100%;
+		height: 30px;
+		line-height:30px;
+		z-index:1;
+		background-color: #ecf0f3;
+		border-radius: 15px;
+		box-shadow: 5px 5px 10px #b1b4b6,
+			-5px -5px 10px #ffffff;
+	}
+	.content {
+		width: 100%;
+		height: 400px;
+		margin-top:20px;
+		background-color: #ecf0f3;
+		border-radius: 15px;
+		box-shadow: 5px 5px 10px #b1b4b6,
+			-5px -5px 10px #ffffff;
+	}
+	.content section{
+		position: absolute;
+		opacity: 0;
+		transition: .4s ease-out;
+	}
+	.content section.active-section{
+		opacity: 1;
+	}
+	.main {
+		width: 300px;
+		height: 400px;
+		z-index:1;
+		display:inline-block;
+		position:relative;
+		overflow: hidden;
+		border-radius: 10px;
+	}
+	.bgo {
+		background-repeat: no-repeat;
+		background-size: cover;
+		width:100%;
+	}
+	.bgt {
+		margin-bottom:40px;
+		background-repeat: no-repeat;
+		background-size: cover;
+		width:100%;
+	}
+	.ato {
+		width: 100px;
+		height: 100px;
+		position: absolute;
+		top: 37%;
+		left: 33%;
+		border-radius: 50%;
+	}
+	.ats {
+		width: 60px;
+		height: 60px;
+		position: absolute;
+		top: 70px;
+		left: 120px;
+		border-radius: 50%;
+		animation: light 4s ease-in-out infinite;
+		transition: 0.5s;
+	}
+		.ats:hover {
+		transform: scale(1.15) rotate(720deg);
+	}
+	.name {
+		margin:0 auto;
+		margin-top: 75px;
+		height:20px;
+		line-height:20px;
+		font-size: 22px;
+		text-align: center;
+	}
+	.motto{
+		margin:0 auto;
+		font-size: 14px;
+		text-align: center;
+		margin-top:10px;
+		width:130px;
+		height:20px;
+		line-height:20px;
+	}
+	.navo{
+		text-align:center;
+		position:fixed;
+		bottom:65px;
+	}
+	.navo ul li{
+		float:left;
+		margin-left:30px;
+		animation: light 4s ease-in-out infinite;
+		transition: 0.5s;
+	}
+	.navo ul li:hover {
+		transform: scale(1.15) rotate(720deg);
+	}
+	.about{
+		font-size:12px;
+		padding:10px;
+		margin:40px;
+		margin-top:0px;
+		margin-bottom:0px;
+		border-radius: 15px;
+		background: #ecf0f3;
+		box-shadow: inset 5px 5px 10px #b1b4b6,
+			inset -5px -5px 10px #ffffff;
+	}
+	.box{
+		margin:20px;
+		margin-top:0px;
+		border-radius: 15px;
+		padding:10px;
+		margin-bottom:10px;
+		background: #ecf0f3;
+		box-shadow: inset 5px 5px 10px #b1b4b6,
+			inset -5px -5px 10px #ffffff;
+	}
+	#boxs{
+		margin:0px;
+		height: 200px;
+		overflow-x: hidden;
+		overflow-y: scroll;
+	}
+	#boxs::-webkit-scrollbar{
+		width: 5px;
+		height: 5px;
+	}
+	#boxs::-webkit-scrollbar-track{
+		border-radius: 12px;
+		background-color: #eee;
+	}
+	#boxs::-webkit-scrollbar-thumb{
+		border-radius: 12px;
+		background-color: #aaa;
+	}
+	.track-list li {
+		position: relative;
+		padding: 10px 0 0 20px;
+		margin-left:15px;
+		border-left: 2px solid #aaa;
+	}
+	.track-list li .node-icon {
+		position: absolute;
+		left: -10px;
+		top: 50%;
+		height:18px;
+		border-radius: 50%;
+		background-color:#ecf0f3;
+	}
+	.track-list li .time {
+		position: relative;
+		font-size:12px;
+		width:100%;
+		top:4px;
+		display: inline-block;
+		vertical-align: middle;
+	}
+	.track-list li .txt {
+		position: relative;
+		font-size:12px;
+		top: 2px;
+		display: inline-block;
+		vertical-align: middle;
+	}
+	.web{
+		width:75%;
+		height:20px;
+		text-align:center;
+		background: #fafafa 
+		repeating-linear-gradient(-45deg,#fff,#fff 1.125rem,transparent 1.125rem,transparent 2.25rem);
+		box-shadow:0 2px 5px rgba(0,0,0,.15);
+		margin:0 auto;
+		margin-top:0px;
+		margin-bottom:20px;
+		padding:10px;
+		border-radius:5px;
+		font-size:15px;
+		font-weight: 900;
+	}
+	.tips{
+		width:73%;
+		border-bottom-right-radius: 2px;
+		border-left: 4px solid #2ECC71;
+		border-top-right-radius: 2px;
+		margin: 0 auto;
+		text-align:center;
+		padding: 10px;
+		position: relative;
+		background-color: #f8f8f8;
+		font-size:15px;
+	}
+	.footer{
+		width:100%;
+		margin: 0 auto;
+		font-size:11px;
+		text-align:center;
+		position:fixed;
+		bottom:10px;
+	}
+
+/* 响应式布局 - 当屏幕宽度小于等于 600px 时 */
+@media (max-width: 600px) {
+    .container {
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        transform: none;
+        border-radius: 0;
+        box-shadow: none;
+        padding-top: 10px; /* 为状态栏留出空间 */
+    }
+
+    .hander, .content {
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 15px; /* 在移动端保留圆角 */
+    }
+
+    .content {
+        height: calc(100vh - 120px); /* 适应屏幕高度 */
+    }
+	
+	.main {
+		width: 100%;
+		height: 100%;
+	}
+
+    .footer {
+        width: 95%;
+        left: 2.5%;
+        bottom: 5px;
+        font-size: 10px;
+    }
+	
+	.navo {
+        width: 100%;
+        position: relative;
+        bottom: auto;
+        padding: 10px 0;
+    }
+	
+    .navo ul {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+		padding: 0;
+    }
+
+    .navo ul li {
+        margin: 0 15px;
+    }
+}
+
+/* 响应式布局 - 当屏幕宽度大于 600px 时 */
+@media (min-width: 601px) {
+    .container {
+        width: 380px; /* 在大屏幕上使用更宽的容器 */
+        height: 600px;
+    }
+	
+	.hander {
+		width: 100%;
+	}
+
+    .content {
+		width: 100%;
+        height: 520px; /* 相应增加高度 */
+    }
+	
+	.main {
+		width: 100%;
+		height: 100%;
+	}
+
+    .navo{
+        width: 100%;
+    }
+	
+	.navo ul{
+		display: flex;
+        justify-content: center;
+		padding: 0;
+	}
+	
+	.navo ul li{
+		margin: 0 15px;
+	}
+}
