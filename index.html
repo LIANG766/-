@@ -2,128 +2,252 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>YINMEI</title>
-    <meta name="chenc" content="Runoob">
-    <meta name="description" content="YINMEI">
-    <meta name="keywords" content="YINMEI">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="Robots" contect="all">
-    <link rel="stylesheet" href="./css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YINMEI - 3D Glass Portfolio</title>
+    <meta name="description" content="YINMEI - 3D立体液态玻璃材质个人引导网页">
+    <meta name="keywords" content="YINMEI, 3D, Glass, Portfolio">
+    <link rel="stylesheet" href="./css/glass-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-	<body>
-		<div class="container"><!-- 主体开始 -->
-			<div class="hander"><!-- 导航开始 -->
-				<nav id="nav-menu">
-					<a href="#" data-rel="home-me-section" class="active">首页</a>
-					<a href="#" data-rel="about-exp-section">关于</a>
-					<a href="#" data-rel="course-exp-section">历程</a>
-					<a href="#" data-rel="website-exp-section">站点</a>
-					</nav>
-				</div><!-- 导航结束 -->
-			<div class="content"><!-- 内容开始 -->
-				<section class="home-me-section active-section"><!-- 首页开始 -->
-					<div class="main"><!-- 首页内容 -->
-						<img src="img/bgo.jpg" class="bgo" />
-						<img src="img/avatar.jpg" class="ato" onclick="alert('戳我干嘛 ￣へ￣')" />
-						<div class="name" onclick="javascript:this.innerHTML=(this.innerHTML=='玫摸鱼'?'阿玫':'玫摸鱼');">玫摸鱼</div>
-						<div class="motto" onclick="javascript:this.innerHTML=(this.innerHTML=='心存敬畏 行有所止'?'Be in awe and stop':'心存敬畏 行有所止');">心存敬畏 行有所止</div>
-						<div class="navo">
-							<ul>
-								<li><a href="https://t.me/YinmeiLiang" target="_blank"><i class="fab fa-telegram"></i></a></li><!-- Telegram -->
-								<li><a href="https://www.weibo.com/u/7557660366" target="_blank"><i class="fab fa-weibo"></i></a></li><!-- 微博 -->
-								<li><a href="https://x.com/YinmeiLiang" target="_blank"><i class="fab fa-twitter"></i></a></li><!-- twitter -->
-								<li><a href="https://github.com/LIANG766" target="_blank"><i class="fab fa-github"></i></a></li><!-- github -->
-								<li><a href="https://baidu.com" target="_blank"><i class="fas fa-paw"></i></a></li><!-- 百度 -->
-								<li><a href="mailto:shuiquan6329@163.com" target="_blank"><i class="fas fa-envelope"></i></a></li><!-- 邮箱 -->
-							</ul>
-						</div>
-					</div><!-- 首页内容结束 -->
-					</section><!-- 首页结束 -->
-				<section class="about-exp-section"><!-- 关于开始 -->
-					<div class="main"><!-- 关于内容 -->
-						<img src="img/bgt.jpg" class="bgt" />
-						<img src="img/avatar.jpg" class="ats" />
-						<div class="about">
-							<p>>_酷爱前端开发，会去自学感兴趣的一切东西
-							<br>>_略懂H5，php，喜欢折腾，努力去解决遇到的一切问题
-							</p>
-						</div>
-						<div class="about" style="margin-top:20px;">
-						    <p>希望与大家一起交流学习
-							<br>这条路我才刚刚迈开了我的第一步
-							<br>路上的坎一定会非常多，但在我眼里
-							<br>没有什么问题是尝试不能解决的，
-							<br>即使前方的路看似绝境，也要有硬生生给自己开出一条路的勇气</p>
-						</div>
-					</div><!-- 关于内容结束 -->
-					</section><!-- 关于结束 -->
-				<section class="course-exp-section"><!-- 历程开始 -->
-					<div class="main"><!-- 历程内容 -->
-						<img src="img/bgt.jpg" class="bgt" />
-						<img src="img/avatar.jpg" class="ats" />
-						<div class="box">
-							<div id="boxs">
-								<div class="track-list"><!-- 时间轴开始 -->
-								<ul>
-									<li>
-										<i class="node-icon"><img src="img/tbl.svg"></i>
-										<span class="time" style="color:#2ECC71">2025-6-21</span>
-										<span class="txt" style="color:#2ECC71">搭建</span>
-									</li>
-								</ul>
-							<!-- 时间轴结束 -->
-						</div>
-					</div>
-					<!-- <div style="color:#aaa;text-align:center;font-size:12px">注: 上下滑动查看历史进程</div>	-->
-					</div>
-					</div><!-- 历程内容结束 -->
-				</section><!-- 历程结束 -->
-					
+<body>
+    <!-- 3D背景粒子 -->
+    <div class="particle-container" id="particles"></div>
+    
+    <!-- 主容器 -->
+    <div class="glass-container">
+        <!-- 导航栏 -->
+        <nav class="glass-nav">
+            <div class="nav-brand">
+                <span class="brand-text">YINMEI</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active" data-section="home">首页</a></li>
+                <li><a href="#about" class="nav-link" data-section="about">关于</a></li>
+                <li><a href="#skills" class="nav-link" data-section="skills">技能</a></li>
+                <li><a href="#projects" class="nav-link" data-section="projects">项目</a></li>
+                <li><a href="#contact" class="nav-link" data-section="contact">联系</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
 
-				<section class="website-exp-section"><!-- 站点开始 -->
-					<div class="main"><!-- 站点内容开始 -->
-						<img src="img/bgt.jpg" class="bgt" />
-						<img src="img/avatar.jpg" class="ats" />
-							<div class="box">
-							<div id="boxs">
-						<a href="https://space.bilibili.com/410245268?spm_id_from=333.337.0.0" target="_blank"><div class="web">我的主页</div></a>
-						<a href="https://nature.hncwtv.top" target="_blank"><div class="web">我的小站</div></a><!-- 站点一 -->
-						<div class="web" onclick="alert('敬请期待')">敬请期待</div>
-						<div class="tips">所有站点均正常运行</div>
-						</div><!-- 站点内容结束 -->
-					</section><!-- 站点结束 -->
-				</div><!-- 内容结束 -->
-			</div><!-- 主体结束 -->
-		<div class="footer"><!-- 底部版权 -->
-		<span id="sitetime"></span><!-- 运行时间 -->
-        <a href="//beian.miit.gov.cn/" target="_blank"><div class="web"><img src="./img/beian.png" style="height: 1em;"> 备案号：桂ICP备2025063700号-1 </div></a><!-- 备案号 -->
-        </div><!-- 版权结束 -->
-		<div id="tp-weather-widget"></div><!-- 天气插件 -->
-		<script>
-			(function(a,h,g,f,e,d,c,b){b=function(){d=h.createElement(g);c=h.getElementsByTagName(g)[0];d.src=e;d.charset="utf-8";d.async=1;c.parentNode.insertBefore(d,c)};a["SeniverseWeatherWidgetObject"]=f;a[f]||(a[f]=function(){(a[f].q=a[f].q||[]).push(arguments)});a[f].l=+new Date();if(a.attachEvent){a.attachEvent("onload",b)}else{a.addEventListener("load",b,false)}}(window,document,"script","SeniverseWeatherWidget","//cdn.sencdn.com/widget2/static/js/bundle.js?t="+parseInt((new Date().getTime() / 100000000).toString(),10)));
-			window.SeniverseWeatherWidget('show', {
-			flavor: "bubble",
-			location: "WX4FBXXFKE4F",
-			geolocation: true,
-			language: "zh-Hans",
-			unit: "c",
-			theme: "auto",
-			token: "ac1d036a-99f3-4f88-ae98-f795bb93a9f0",
-			hover: "disabled",
-			container: "tp-weather-widget"
-			})
-		</script><!-- 天气插件结束 -->
-		<script src="./js/index.js"></script><!-- 核心插件 -->
-		<script src="./js/all.js"></script><!-- 图标库 -->
-		<script src="./js/Sitetime.js"></script><!-- 运行时间 -->
-		<script>
-			// 根据屏幕宽度判断是否加载鼠标点击特效
-			if (document.body.clientWidth > 600) {
-				var script = document.createElement('script');
-				script.src = "./js/Mouse.js"; // 鼠标点击特效
-				document.body.appendChild(script);
-			}
-		</script>
-		<script src="//music.clwl.online/Player/player.min.js" id="SinKingMusic" key="390"></script><!-- 音乐播放 -->
-	</body>
+        <!-- 主要内容区域 -->
+        <main class="main-content">
+            <!-- 首页部分 -->
+            <section id="home" class="section active">
+                <div class="hero-content">
+                    <div class="avatar-container">
+                        <div class="avatar-ring"></div>
+                        <img src="img/avatar.jpg" alt="Avatar" class="avatar" />
+                        <div class="avatar-glow"></div>
+                    </div>
+                    <div class="hero-text">
+                        <h1 class="hero-title">
+                            <span class="title-line">Hello, I'm</span>
+                            <span class="title-name">玫摸鱼</span>
+                        </h1>
+                        <p class="hero-subtitle">心存敬畏 行有所止</p>
+                        <div class="hero-description">
+                            <p>专注于创造美观且功能强大的数字体验</p>
+                        </div>
+                        <div class="hero-buttons">
+                            <button class="glass-btn primary">了解更多</button>
+                            <button class="glass-btn secondary">查看作品</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="scroll-indicator">
+                    <div class="scroll-arrow"></div>
+                </div>
+            </section>
+
+            <!-- 关于部分 -->
+            <section id="about" class="section">
+                <div class="section-content">
+                    <h2 class="section-title">关于我</h2>
+                    <div class="about-grid">
+                        <div class="about-text glass-card">
+                            <h3>个人简介</h3>
+                            <p>我是一名热爱技术的开发者，专注于前端开发和用户体验设计。喜欢探索新技术，追求代码的优雅与效率。</p>
+                            <div class="stats">
+                                <div class="stat-item">
+                                    <span class="stat-number">3+</span>
+                                    <span class="stat-label">年经验</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">50+</span>
+                                    <span class="stat-label">项目</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">100%</span>
+                                    <span class="stat-label">用心</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="about-image glass-card">
+                            <div class="image-frame">
+                                <img src="img/bgo.jpg" alt="About Image" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 技能部分 -->
+            <section id="skills" class="section">
+                <div class="section-content">
+                    <h2 class="section-title">技能专长</h2>
+                    <div class="skills-grid">
+                        <div class="skill-card glass-card">
+                            <div class="skill-icon">🎨</div>
+                            <h3>前端开发</h3>
+                            <p>HTML5, CSS3, JavaScript, React, Vue</p>
+                            <div class="skill-progress">
+                                <div class="progress-bar" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-card glass-card">
+                            <div class="skill-icon">⚙️</div>
+                            <h3>后端开发</h3>
+                            <p>Node.js, Python, Database Design</p>
+                            <div class="skill-progress">
+                                <div class="progress-bar" data-width="75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-card glass-card">
+                            <div class="skill-icon">📱</div>
+                            <h3>UI/UX设计</h3>
+                            <p>Figma, Adobe Creative Suite, Prototyping</p>
+                            <div class="skill-progress">
+                                <div class="progress-bar" data-width="85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-card glass-card">
+                            <div class="skill-icon">🚀</div>
+                            <h3>项目管理</h3>
+                            <p>Git, CI/CD, Team Collaboration</p>
+                            <div class="skill-progress">
+                                <div class="progress-bar" data-width="80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 项目部分 -->
+            <section id="projects" class="section">
+                <div class="section-content">
+                    <h2 class="section-title">精选项目</h2>
+                    <div class="projects-grid">
+                        <div class="project-card glass-card">
+                            <div class="project-image">
+                                <img src="img/bgo.jpg" alt="Project 1" />
+                                <div class="project-overlay">
+                                    <button class="project-btn">查看详情</button>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3>3D可视化平台</h3>
+                                <p>基于Three.js的交互式3D数据可视化平台</p>
+                                <div class="project-tags">
+                                    <span class="tag">Three.js</span>
+                                    <span class="tag">WebGL</span>
+                                    <span class="tag">React</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card glass-card">
+                            <div class="project-image">
+                                <img src="img/bgo.jpg" alt="Project 2" />
+                                <div class="project-overlay">
+                                    <button class="project-btn">查看详情</button>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3>智能管理系统</h3>
+                                <p>企业级数据管理与分析系统</p>
+                                <div class="project-tags">
+                                    <span class="tag">Vue.js</span>
+                                    <span class="tag">Node.js</span>
+                                    <span class="tag">MongoDB</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card glass-card">
+                            <div class="project-image">
+                                <img src="img/bgo.jpg" alt="Project 3" />
+                                <div class="project-overlay">
+                                    <button class="project-btn">查看详情</button>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3>移动端应用</h3>
+                                <p>跨平台移动应用开发解决方案</p>
+                                <div class="project-tags">
+                                    <span class="tag">React Native</span>
+                                    <span class="tag">TypeScript</span>
+                                    <span class="tag">Redux</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 联系部分 -->
+            <section id="contact" class="section">
+                <div class="section-content">
+                    <h2 class="section-title">联系我</h2>
+                    <div class="contact-grid">
+                        <div class="contact-info glass-card">
+                            <h3>让我们开始对话</h3>
+                            <p>如果您对我的工作感兴趣，或者有任何项目合作想法，请随时联系我。</p>
+                            <div class="contact-items">
+                                <div class="contact-item">
+                                    <span class="contact-icon">📧</span>
+                                    <span>email@example.com</span>
+                                </div>
+                                <div class="contact-item">
+                                    <span class="contact-icon">📱</span>
+                                    <span>+86 138 0000 0000</span>
+                                </div>
+                                <div class="contact-item">
+                                    <span class="contact-icon">📍</span>
+                                    <span>中国 · 深圳</span>
+                                </div>
+                            </div>
+                            <div class="social-links">
+                                <a href="#" class="social-link">GitHub</a>
+                                <a href="#" class="social-link">LinkedIn</a>
+                                <a href="#" class="social-link">微博</a>
+                            </div>
+                        </div>
+                        <div class="contact-form glass-card">
+                            <form>
+                                <div class="form-group">
+                                    <input type="text" placeholder="您的姓名" class="form-input">
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" placeholder="邮箱地址" class="form-input">
+                                </div>
+                                <div class="form-group">
+                                    <textarea placeholder="留言内容" class="form-textarea"></textarea>
+                                </div>
+                                <button type="submit" class="glass-btn primary full-width">发送消息</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- 脚本文件 -->
+    <script src="./js/glass-effects.js"></script>
+    <script src="./js/particles.js"></script>
+    <script src="./js/navigation.js"></script>
+</body>
 </html>
